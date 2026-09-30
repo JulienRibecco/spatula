@@ -1,0 +1,32 @@
+name: Lua checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        lua: ["5.4", "5.5", "luajit"]
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: leafo/gh-actions-lua@v13
+        with:
+          luaVersion: ${{ matrix.lua }}
+      - uses: leafo/gh-actions-luarocks@v6
+        with:
+          luaRocksVersion: "3.13.0"
+      - name: Build optional native field library
+        if: matrix.lua == 'luajit'
+        run: cc -O3 -shared -fPIC compiler/native/field_native.c -lm -o compiler/native/libfield_native.so
+      - run: python3 tools/test.py --lua lua
+      - run: python3 tools/check_examples.py --lua lua
+      - run: python3 tools/check_examples.py --lua lua --luarocks luarocks

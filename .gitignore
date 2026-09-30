@@ -1,0 +1,12 @@
+.DS_Store
+node_modules/
+__pycache__/
+*.pyc
+/dist/
+*.o
+*.so
+*.dylib
+*.dll
+*.log
+/sketchbook/exports/*
+!/sketchbook/exports/linkedin/

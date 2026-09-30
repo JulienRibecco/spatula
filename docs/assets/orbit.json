@@ -1,0 +1,11 @@
+{
+  "recipe": "examples/orbit.lua",
+  "sha256": "c8494bb89757baa3f6d700e911f95730c20be658031cfd176c2ee00985715e73",
+  "width": 1120,
+  "height": 440,
+  "frames": 100,
+  "fps": 25,
+  "seconds": 4,
+  "position_samples": 1600,
+  "renderer": "tools/render_readme.py"
+}

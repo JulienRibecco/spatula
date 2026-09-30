@@ -1,0 +1,53 @@
+{
+  "collection": "Spatula \u2014 selected LinkedIn slideshow",
+  "width": 1584,
+  "height": 396,
+  "settings": {
+    "palette": "ink",
+    "density": 1,
+    "signature": "Julien Ribecco",
+    "lettering": true
+  },
+  "slides": [
+    {
+      "order": 1,
+      "study": "Orbit",
+      "filename": "01-orbit.png",
+      "showCode": false,
+      "time": 6,
+      "sha256": "200a735109a7c5739b7e250544988607c11951f65679f70c2af5404f1ef7760a"
+    },
+    {
+      "order": 2,
+      "study": "Bloom",
+      "filename": "02-bloom-code.png",
+      "showCode": true,
+      "time": 6,
+      "sha256": "6db643f0433912ec7313fa3776007865c1fe616aa2be124adeacee2985c2c80a"
+    },
+    {
+      "order": 3,
+      "study": "Flow",
+      "filename": "03-flow.png",
+      "showCode": false,
+      "time": 6,
+      "sha256": "fede104c3fc0cced0df770b52747e486d6dbcb0596112c38b5ccb6856b952fbb"
+    },
+    {
+      "order": 4,
+      "study": "Resonance",
+      "filename": "04-resonance-code.png",
+      "showCode": true,
+      "time": 6,
+      "sha256": "f8115f39f9bff222b3fa6439265b97699bd9c6b45daa03e21b81cfefb4bbaf23"
+    },
+    {
+      "order": 5,
+      "study": "Convergence",
+      "filename": "05-convergence.png",
+      "showCode": false,
+      "time": 12,
+      "sha256": "2797263a66630d6e5a977dd8b386e1c261a20e145d751a6d934c67aa8aea69e4"
+    }
+  ]
+}

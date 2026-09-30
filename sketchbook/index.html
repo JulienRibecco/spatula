@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eeeae1">
+  <title>Spatula — A motion sketchbook</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2322221f'/%3E%3Cpath d='M17 39C5 9 59 12 47 38S5 49 24 21s34 18 8 28' fill='none' stroke='%23d4906d' stroke-width='2'/%3E%3C/svg%3E">
+</head>
+<body>
+  <header class="masthead">
+    <a class="wordmark" href="./" aria-label="Spatula sketchbook home"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M12 31C0 3 47 9 37 30S3 40 18 15s31 14 7 25"/></svg>spatula<span class="mast-divider"></span><span class="mast-caption">a motion sketchbook</span></a>
+    <span class="edition">VOL. 01 <span>—</span> FIVE STUDIES</span>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div><p class="eyebrow"><span class="small-star">✳</span> AN EXPLORATION IN GENERATIVE MOTION</p><h1 id="page-title">Simple rules.<br><em>Unexpected beauty.</em></h1></div>
+      <div class="intro-note"><span class="note-line"></span><p>A few curves. A little curiosity.<br>Five living studies, ready to become<br>your next LinkedIn cover.</p><a href="#studies">Explore the collection <span aria-hidden="true">↙</span></a></div>
+    </section>
+
+    <section class="workspace" aria-label="Banner preview and playback">
+      <div class="canvas-heading"><span><span class="live-dot"></span><span id="preview-state">LIVE CANVAS</span></span><span>LINKEDIN COVER <span class="heading-divider">/</span> 1584 × 396</span></div>
+      <div class="canvas-wrap" id="canvas-wrap">
+        <canvas id="artwork" width="1584" height="396" aria-label="Orbit: a generative Spatula banner"></canvas>
+        <div class="profile-guide" id="profile-guide" hidden aria-hidden="true"><div class="avatar-guide">PROFILE<br>PHOTO</div><span>Approximate photo overlap · never exported</span></div>
+      </div>
+      <div class="playback">
+        <button class="icon-button" id="play" aria-label="Pause motion" aria-pressed="true"><span id="play-icon" aria-hidden="true">Ⅱ</span></button>
+        <label class="sr-only" for="time">Moment in the motion loop</label><input id="time" type="range" min="0" max="24" step="0.01" value="6"><output for="time" id="time-value">06.00 s</output>
+        <span class="playback-divider"></span><button class="text-button" id="slideshow" aria-pressed="false"><span aria-hidden="true">▤</span> <span>Preview slideshow</span></button>
+        <button class="text-button guide-button" id="guide" aria-pressed="false"><span aria-hidden="true">⊙</span> Photo guide</button>
+      </div>
+    </section>
+
+    <section class="collection" id="studies" aria-label="Choose a study">
+      <div class="section-line"><h2>THE COLLECTION</h2><span>Five expressions of the same idea.</span><span class="section-count">01 — 05</span></div>
+      <div class="study-grid" id="study-grid"></div>
+    </section>
+
+    <section class="workbench" aria-label="Customize and export your banner">
+      <div class="study-notes"><p class="eyebrow" id="study-number">STUDY 01 / ORBIT</p><h2 id="study-heading">A little order.<br>A little wonder.</h2><p id="study-description">Circles inside circles. Small shifts in phase trace an orbit that never quite repeats.</p><div class="recipe"><span class="recipe-mark">ƒ</span><span id="study-recipe">circle + phase + rotation</span></div></div>
+      <div class="controls">
+        <div class="control-row"><span class="control-label" id="palette-label">01 <span>Palette</span></span><div class="palettes" role="group" aria-labelledby="palette-label"><button class="swatch active" data-palette="ink" aria-label="Ink palette" aria-pressed="true"><i style="--swatch:#222723"></i>Ink</button><button class="swatch" data-palette="paper" aria-label="Paper palette" aria-pressed="false"><i style="--swatch:#e9e1d0"></i>Paper</button><button class="swatch" data-palette="moss" aria-label="Moss palette" aria-pressed="false"><i style="--swatch:#3b5046"></i>Moss</button></div></div>
+        <div class="control-row"><label class="control-label" for="density">02 <span>Line density</span></label><div class="density-control"><input id="density" type="range" min="0.5" max="1.5" step="0.05" value="1"><output for="density" id="density-value">100%</output></div></div>
+        <div class="control-row"><label class="control-label" for="signature">03 <span>Your signature</span></label><input id="signature" class="signature" type="text" value="Julien Ribecco" maxlength="32" autocomplete="name" spellcheck="false"></div>
+        <div class="control-row"><label class="control-label" for="lettering">04 <span>Banner lettering</span></label><label class="switch"><input id="lettering" type="checkbox" checked><span class="switch-track"></span><span class="sr-only">Include lettering in the banner</span></label></div>
+        <div class="control-row"><label class="control-label" for="show-code">05 <span>Code on the banner</span></label><label class="switch"><input id="show-code" type="checkbox"><span class="switch-track"></span><span class="sr-only">Display the executable composition on the banner</span></label></div>
+      </div>
+      <div class="export-panel"><p class="eyebrow">FROM THE SKETCHBOOK, TO YOUR PROFILE</p><h2>Make it yours.</h2><p>Keep a moment, or take the whole collection.</p><button class="export-primary" id="export-current"><span>Save this banner</span><span aria-hidden="true">↓</span></button><button class="export-secondary" id="export-all"><span>Download all five</span><span class="zip-label">ZIP ↗</span></button><p class="export-note">PNG · 1584 × 396 · Ready to upload</p><p id="status" role="status" aria-live="polite"></p></div>
+    </section>
+    <details class="source-panel" id="source-panel">
+      <summary><span class="source-title">The drawing, in code.</span><span id="source-summary">10 lines of composition</span><span class="source-plus" aria-hidden="true">+</span></summary>
+      <div class="source-body">
+        <div class="source-context"><p class="eyebrow">THE EXECUTABLE RECIPE</p><h2 id="source-title">Orbit</h2><p id="source-note"></p><p class="source-honesty">C is Spatula’s Curve JavaScript port. The canvas runs this exact function. Counts cover the composition; layer repetition, sampling, and drawing live in the renderer.</p><div class="source-links"><a href="./recipes.js" target="_blank" rel="noreferrer">Recipe module ↗</a><a href="./scenes.js" target="_blank" rel="noreferrer">Full renderer ↗</a></div></div>
+        <div class="source-listing"><div class="source-toolbar"><span id="source-stats"></span><button id="copy-code" class="text-button">Copy recipe ↗</button></div><pre tabindex="0" aria-label="Executable Spatula composition"><code id="recipe-code"></code></pre><p id="code-status" role="status" aria-live="polite"></p></div>
+      </div>
+    </details>
+  </main>
+  <footer><span>DRAWN WITH SPATULA. BUILT FROM CURVES.</span><a href="https://www.linkedin.com/help/linkedin/answer/a7145577" target="_blank" rel="noreferrer">About LinkedIn cover slideshows ↗</a><span>EVERYTHING STARTS WITH ƒ(t).</span></footer>
+  <noscript>This sketchbook needs JavaScript to draw and export its studies.</noscript>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./studio.js"></script>
+</body>
+</html>
